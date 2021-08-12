@@ -8,15 +8,38 @@
 
 import UIKit
 
+@available(iOS 13.0, *)
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
+    var window: UIWindow?
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        print(NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).last as! String)
+        
         return true
     }
+    
+    //MARK: Application Life Cycle
+    
+    func applicationDidEnterBackground(_ application: UIApplication) {
+        print("applicationDidEnterBackground")
+    }
+    
+    func applicationWillResignActive(_ application: UIApplication) {
+        print("applicationWillResignActive")
+    }
+    
+    func applicationWillEnterForeground(_ application: UIApplication) {
+        print("applicationWillEnterForeground")
+    }
+    
+    func applicationWillTerminate(_ application: UIApplication) {
+        print("applicationWillTerminate")
+    }
+    
 
     // MARK: UISceneSession Lifecycle
 
